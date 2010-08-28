@@ -1,0 +1,70 @@
+*mailbrowser.txt*	How to use the mailbrowser plugin
+
+ This plugin allows one to view a mail collection similar to the way one
+ would view it in a mailer.
+
+ Normally, this file will reside in the plugins directory and be
+ automatically sourced.  If not, you must manually source this file
+ using :source mailbrowser.vim
+
+ :Mail <filename>
+   will bring up an index of the mail contained in the specified file
+ :Mail
+   will bring up an index of the mail contained in the file specified by the
+   $MAIL environment variable
+ :SMail
+   will open a new window and then do what :Mail would have done
+
+
+ Keys defined in mail browser index
+    s = select what to sort by
+    r = reverse the current sort order
+    o = open the mail under the cursor in a separate window
+        <doubleclick> will do the same as o
+ <cr> = open the mail under the cursor in the current window
+    u = update the index
+    d = mark for deletion (doesn't really work)
+
+
+ When viewing a mail message:
+    i = return to index
+    a = toggle viewing all headers
+    J = go to next message down in the index
+    K = go to next message up in the index
+
+
+ Globals of use:
+   g:mailbrowserSortBy 
+       selects the default sort. Choices are 'subject', 'index', or 'from'
+       with the optional addition of 'reverse'
+       Example (and default):
+           let g:mailbrowserSortBy='reverse subject'
+
+   g:mailbrowserMailPath
+       Chose the directory to look in for named mail files
+       Example (and default):
+           let g:mailbrowserMailPath = $HOME . "/Mail"
+
+   g:mailbrowserFromLength
+       Chose how many characters of the "from" address to display
+       Example (and default):
+           let g:mailbrowserFromLength = 25
+
+   g:mailbrowserShowHeaders
+       Choose which mail headers will be displayed as part of the message.
+       If this is not empty, then headers that do not match this will not be
+       displayed.
+       Example (and default):
+           let g:mailbrowserShowHeaders = '^(Subject:|Date:|From:|To:|Cc:)'
+
+   g:mailbrowserHideHeaders
+       Choose which mail headers will NOT be displayed as part of the
+       message.  If this is not empty, then headers that match this will not
+       be displayed.
+       Example (and default):
+           let g:mailbrowserHideHeaders = ""
+
+ Changes in 1.3
+   Fixed bug in globbing of filenames
+   Auto-install help file when first run
+   Added J and K mappings in mail window

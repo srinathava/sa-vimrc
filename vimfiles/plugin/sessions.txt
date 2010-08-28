@@ -1,0 +1,85 @@
+"        File: sessions.vim
+"      Author: Srinath Avadhanula <srinath@fastmail.fm>
+" Description: a light weight plugin for managing sessions.
+"              creates session files in the ~/.vimsessions directory and
+"              orders them into an easy menu.
+
+" MakeSessionsMenu: creates menu from sessions found in ~/.vimsessions/ {{{
+" Description: 
+function! MakeSessionsMenu()
+	
+	amenu <silent> 8888.1 &Sessions.Save\ Current\ Session :call SaveSession()<cr>
+	amenu <silent> 8888.2 &Sessions.Edit\ Session\ File :call EditSessionFile()<cr>
+	amenu <silent> 8888.3 &Sessions.-sep- <nul>
+	
+    let i = 1
+	let files = glob($HOME.'/.vimsessions/*.session.vim')
+    for fname in split(files, "\n")
+		let fname = fnamemodify(fname, ':t:r:r')
+		exec "amenu <silent> 8888.7 &Sessions.&".i."\\ ".fname." :call LoadSession(\"".fname."\")<cr>"
+		exec "amenu <silent> 8888.7 &Sessions.&Delete.&".i."\\ ".fname." :call DeleteSession(\"".fname."\")<cr>"
+
+        let i = i + 1
+	endfor
+endfunction 
+
+" }}}
+" SaveSession: save current editing session in ~/.vimsessions {{{
+function! SaveSession()
+	if glob($HOME.'/.vimsessions/') == ''
+		echomsg 'session directory doesnt exist! Please create ~/.vimsessions and retry...'
+		return
+	end
+	if v:this_session == ''
+		let nickName = escape(inputdialog('Enter nickname for session'), " ")
+		echo "saving sesion as ".nickName
+		let fullName = $HOME.'/.vimsessions/'.nickName.'.session.vim'
+	else
+		let fullName = v:this_session
+	end
+	exe 'mksession! '.fullName
+endfunction
+
+" }}}
+" LoadSession: save current editing session in ~/.vimsessions {{{
+function! LoadSession(sessionNickName)
+	if glob($HOME.'/.vimsessions/'.a:sessionNickName.'.session.vim') == ''
+		echomsg 'session ['.a:sessionNickName.'] doesnt exist!'
+		return
+	end
+	exe 'source '.$HOME.'/.vimsessions/'.a:sessionNickName.'.session.vim'
+    augroup SaveSession
+        au!
+        au VimLeavePre * :call SaveSessionAtVimLeave()
+    augroup END
+endfunction
+
+" }}}
+" SaveSessionAtVimLeave: save the session automatically when Vim exits {{{
+" Description: 
+function! SaveSessionAtVimLeave()
+    if exists('s:DoneSavingSession')
+        return
+    endif
+    let s:DoneSavingSession = 1
+    if exists('v:this_session') && v:this_session != ''
+        call SaveSession()
+    endif
+endfunction " }}}
+" DeleteSession: deletes session files from ~/.vimsessions. {{{
+function! DeleteSession(fname)
+    let fname = expand('~/.vimsessions/'.a:fname.'.session.vim')
+    if filewritable(fname)
+        echomsg 'getting here, fname = '.fname
+        call delete(fname)
+    endif
+endfunction
+
+" }}}
+
+if has('gui_running')
+    aunmenu &Syntax
+    call MakeSessionsMenu()
+endif
+
+" vim: fdm=marker

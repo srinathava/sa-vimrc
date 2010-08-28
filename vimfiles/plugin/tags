@@ -1,0 +1,445 @@
+Abs	DrawIt.vim	/func! <SID>Abs(val)/
+AddFileInfo	winfileexplorer.vim	/function! s:AddFileInfo()/
+AddHeader	bufexplorer.vim	/function! <SID>AddHeader()/
+AddHeader	winfileexplorer.vim	/function! s:AddHeader()/
+AddListItem	libList.vim	/function AddListItem( array, newItem, index )/
+AddSeparators	winfileexplorer.vim	/function! s:AddSeparators()/
+AddSyntaxFoldItem	SyntaxFolds.vim	/function! AddSyntaxFoldItem(start, end, startoff, endoff, ...)/
+AddToFavDir	winfileexplorer.vim	/function! s:AddToFavDir()/
+AppendListedBuffers	mySessions.vim	/function! <SID>AppendListedBuffers()/
+AreDiffWinsOpened	DirDiff.vim	/function! <SID>AreDiffWinsOpened()/
+Arrow	DrawIt.vim	/func! <SID>Arrow(x0, y0, x1, y1)/
+AskIfModified	DirDiff.vim	/function! <SID>AskIfModified()/
+BackToPreviousBuffer	bufexplorer.vim	/function! <SID>BackToPreviousBuffer()/
+Box	DrawIt.vim	/func! <SID>Box(x0, y0, x1, y1)/
+BufExplorer_IsValid	bufexplorer.vim	/function! BufExplorer_IsValid()/
+BufExplorer_ReSize	bufexplorer.vim	/function! BufExplorer_ReSize()/
+BufExplorer_Refresh	bufexplorer.vim	/function! BufExplorer_Refresh()/
+BufExplorer_Start	bufexplorer.vim	/function! BufExplorer_Start()/
+BufferNumberCmp	bufexplorer.vim	/function! <SID>BufferNumberCmp(line1, line2, direction)/
+CVSAdd	cvscommand.vim	/function! s:CVSAdd()/
+CVSAddConflictSyntax	cvsmenu.vim	/function! CVSAddConflictSyntax()/
+CVSAnnotate	cvscommand.vim	/function! s:CVSAnnotate(...)/
+CVSAsctimeToStr	cvsmenu.vim	/function! CVSAsctimeToStr(asctime)/
+CVSAssureLocalDirs	cvsmenu.vim	/function! CVSAssureLocalDirs()/
+CVSBackupDiffMode	cvsmenu.vim	/function! CVSBackupDiffMode()/
+CVSBufEnter	cvsmenu.vim	/function! CVSBufEnter()/
+CVSBufRead	cvsmenu.vim	/function! CVSBufRead(...)/
+CVSBufferCheck	cvscommand.vim	/function! s:CVSBufferCheck(cvsBuffer)/
+CVSChDir	cvsmenu.vim	/function! CVSChDir(path)/
+CVSChangeToCurrentFileDir	cvscommand.vim	/function! s:CVSChangeToCurrentFileDir(fileName)/
+CVSCommit	cvscommand.vim	/function! s:CVSCommit()/
+CVSCompare	cvsmenu.vim	/function! CVSCompare(...)/
+CVSCompressOutput	cvsmenu.vim	/function! CVSCompressOutput(cmd)/
+CVSCompressStatus	cvsmenu.vim	/function! CVSCompressStatus()/
+CVSCreateCommandBuffer	cvscommand.vim	/function! s:CVSCreateCommandBuffer(cmd, cmdName, statusText, origBuffNR)/
+CVSCurrentBufferCheck	cvscommand.vim	/function! s:CVSCurrentBufferCheck()/
+CVSDiff	cvscommand.vim	/function! s:CVSDiff(...)/
+CVSDiffEnter	cvsmenu.vim	/function! CVSDiffEnter()/
+CVSDiffLeave	cvsmenu.vim	/function! CVSDiffLeave()/
+CVSDiffPrepareLeave	cvsmenu.vim	/function! CVSDiffPrepareLeave()/
+CVSDisableBufferSetup	cvscommand.vim	/function! CVSDisableBufferSetup()/
+CVSDoCommand	cvscommand.vim	/function! s:CVSDoCommand(cmd, cmdName, statusText)/
+CVSDoCommand	cvsmenu.vim	/function! CVSDoCommand(cmd,...)/
+CVSDoTag	cvsmenu.vim	/function! CVSDoTag(usertag,tagopt)/
+CVSDownloadUpdates	cvsmenu.vim	/function! CVSDownloadUpdates()/
+CVSDumpAndClose	cvsmenu.vim	/function! CVSDumpAndClose()/
+CVSEdit	cvscommand.vim	/function! s:CVSEdit()/
+CVSEditFile	cvscommand.vim	/function! s:CVSEditFile(name, origBuffNR)/
+CVSEditors	cvscommand.vim	/function! s:CVSEditors()/
+CVSEnableBufferSetup	cvscommand.vim	/function! CVSEnableBufferSetup()/
+CVSFiletimeToStr	cvsmenu.vim	/function! CVSFiletimeToStr(filename)/
+CVSFindFile	cvsmenu.vim	/function! CVSFindFile()/
+CVSFinishCommit	cvscommand.vim	/function! s:CVSFinishCommit(messageFile, targetDir, targetFile, origBuffNR)/
+CVSGet	cvsmenu.vim	/function! CVSGet(...)/
+CVSGetEntry	cvsmenu.vim	/function! CVSGetEntry(filename)/
+CVSGetFolderNames	cvsmenu.vim	/function! CVSGetFolderNames()/
+CVSGetLocalDirStatus	cvsmenu.vim	/function! CVSGetLocalDirStatus(...)/
+CVSGetLocalStatus	cvsmenu.vim	/function! CVSGetLocalStatus(...)/
+CVSGetOption	cvscommand.vim	/function! s:CVSGetOption(name, default)/
+CVSGetRevision	cvscommand.vim	/function! CVSGetRevision()/
+CVSGetStatusLine	cvscommand.vim	/function! CVSGetStatusLine()/
+CVSGetStatusVars	cvscommand.vim	/function! s:CVSGetStatusVars(revisionVar, branchVar, repositoryVar)/
+CVSGotoOriginal	cvscommand.vim	/function! s:CVSGotoOriginal(...)/
+CVSInputRev	cvsmenu.vim	/function! CVSInputRev(...)/
+CVSInstallAsHelp	cvsmenu.vim	/function! CVSInstallAsHelp(...)/
+CVSInstallAsPlugin	cvsmenu.vim	/function! CVSInstallAsPlugin(...)/
+CVSInstallUpdates	cvsmenu.vim	/function! CVSInstallUpdates()/
+CVSIsW9x	cvsmenu.vim	/function! CVSIsW9x()/
+CVSLeadZero	cvsmenu.vim	/function! CVSLeadZero(value)/
+CVSLocalStatus	cvsmenu.vim	/function! CVSLocalStatus()/
+CVSLog	cvscommand.vim	/function! s:CVSLog(...)/
+CVSMakeLeaderMapping	cvsmenu.vim	/function! CVSMakeLeaderMapping()/
+CVSMakeRO	cvsmenu.vim	/function! CVSMakeRO()/
+CVSMakeRW	cvsmenu.vim	/function! CVSMakeRW()/
+CVSMappingFromMenu	cvsmenu.vim	/function! CVSMappingFromMenu(filename,...)/
+CVSMarkOrigBufferForSetup	cvscommand.vim	/function! s:CVSMarkOrigBufferForSetup(cvsBuffer)/
+CVSMonthIdx	cvsmenu.vim	/function! CVSMonthIdx(month)/
+CVSMoveToTop	cvsmenu.vim	/function! CVSMoveToTop(searchstr)/
+CVSOpenLinks	cvsmenu.vim	/function! CVSOpenLinks()/
+CVSProcessOutput	cvsmenu.vim	/function! CVSProcessOutput(isfile,filename,cmd)/
+CVSQueryAction	cvsmenu.vim	/function! CVSQueryAction()/
+CVSResolveLink	cvscommand.vim	/function! s:CVSResolveLink(fileName)/
+CVSRestoreDiffMode	cvsmenu.vim	/function! CVSRestoreDiffMode()/
+CVSRestoreDir	cvsmenu.vim	/function! CVSRestoreDir()/
+CVSRestoreOpts	cvsmenu.vim	/function! CVSRestoreOpts()/
+CVSRevert	cvscommand.vim	/function! s:CVSRevert()/
+CVSReview	cvscommand.vim	/function! s:CVSReview(...)/
+CVSSaveOpts	cvsmenu.vim	/function! CVSSaveOpts()/
+CVSSetAutocheck	cvsmenu.vim	/function! CVSSetAutocheck(value)/
+CVSSetCompressOutput	cvsmenu.vim	/function! CVSSetCompressOutput(value)/
+CVSSetDontSwitch	cvsmenu.vim	/function! CVSSetDontSwitch(value)/
+CVSSetDumpAndClose	cvsmenu.vim	/function! CVSSetDumpAndClose(value)/
+CVSSetForceDir	cvsmenu.vim	/function! CVSSetForceDir(value)/
+CVSSetOfferRevision	cvsmenu.vim	/function! CVSSetOfferRevision(value)/
+CVSSetQueryRevision	cvsmenu.vim	/function! CVSSetQueryRevision(value)/
+CVSSetSaveDiff	cvsmenu.vim	/function! CVSSetSaveDiff(value)/
+CVSSetSortOutput	cvsmenu.vim	/function! CVSSetSortOutput(value)/
+CVSSetStatusline	cvsmenu.vim	/function! CVSSetStatusline(value)/
+CVSSetTitlebar	cvsmenu.vim	/function! CVSSetTitlebar(value)/
+CVSSetupBuffer	cvscommand.vim	/function! s:CVSSetupBuffer()/
+CVSShowInfo	cvsmenu.vim	/function! CVSShowInfo(...)/
+CVSShowMapping	cvsmenu.vim	/function! CVSShowMapping()/
+CVSSortOutput	cvsmenu.vim	/function! CVSSortOutput()/
+CVSSortStatusOutput	cvsmenu.vim	/function! CVSSortStatusOutput()/
+CVSStatus	cvscommand.vim	/function! s:CVSStatus()/
+CVSStripHeader	cvsmenu.vim	/function! CVSStripHeader()/
+CVSSubstr	cvsmenu.vim	/function! CVSSubstr(string,separator,index)/
+CVSSwitchDiffMode	cvsmenu.vim	/function! CVSSwitchDiffMode()/
+CVSToggleDeleteOnHide	cvscommand.vim	/function! s:CVSToggleDeleteOnHide()/
+CVSUnedit	cvscommand.vim	/function! s:CVSUnedit()/
+CVSUpdate	cvscommand.vim	/function! s:CVSUpdate()/
+CVSUpdateMapping	cvsmenu.vim	/function! CVSUpdateMapping()/
+CVSUpdateSyntax	cvsmenu.vim	/function! CVSUpdateSyntax()/
+CVSUsesFile	cvsmenu.vim	/function! CVSUsesFile()/
+CVSVimDiff	cvscommand.vim	/function! s:CVSVimDiff(...)/
+CVSVimDiffRestore	cvscommand.vim	/function! s:CVSVimDiffRestore(vimDiffBuff)/
+CVSWatch	cvscommand.vim	/function! s:CVSWatch(onoff)/
+CVSWatchers	cvscommand.vim	/function! s:CVSWatchers()/
+CVSadd	cvsmenu.vim	/function! CVSadd()/
+CVSannotate	cvsmenu.vim	/function! CVSannotate()/
+CVSbranch	cvsmenu.vim	/function! CVSbranch()/
+CVScheckout	cvsmenu.vim	/function! CVScheckout()/
+CVScheckoutrevision	cvsmenu.vim	/function! CVScheckoutrevision()/
+CVScommit	cvsmenu.vim	/function! CVScommit()/
+CVScommitrevision	cvsmenu.vim	/function! CVScommitrevision()/
+CVSdiff	cvsmenu.vim	/function! CVSdiff(...)/
+CVSdiffcontext	cvsmenu.vim	/function! CVSdiffcontext()/
+CVSdiffstandard	cvsmenu.vim	/function! CVSdiffstandard()/
+CVSdifftorev	cvsmenu.vim	/function! CVSdifftorev()/
+CVSdiffuni	cvsmenu.vim	/function! CVSdiffuni()/
+CVSgetdiff	cvsmenu.vim	/function! CVSgetdiff(parm)/
+CVShistory	cvsmenu.vim	/function! CVShistory()/
+CVSimport	cvsmenu.vim	/function! CVSimport()/
+CVSimportrevision	cvsmenu.vim	/function! CVSimportrevision()/
+CVSjoinin	cvsmenu.vim	/function! CVSjoinin(...)/
+CVSjoininrevision	cvsmenu.vim	/function! CVSjoininrevision()/
+CVSlog	cvsmenu.vim	/function! CVSlog()/
+CVSlogin	cvsmenu.vim	/function! CVSlogin(...)/
+CVSlogout	cvsmenu.vim	/function! CVSlogout()/
+CVSlogtorev	cvsmenu.vim	/function! CVSlogtorev()/
+CVSqueryupdate	cvsmenu.vim	/function! CVSqueryupdate()/
+CVSrbranch	cvsmenu.vim	/function! CVSrbranch()/
+CVSrelease	cvsmenu.vim	/function! CVSrelease()/
+CVSremove	cvsmenu.vim	/function! CVSremove()/
+CVSrevertchanges	cvsmenu.vim	/function! CVSrevertchanges()/
+CVSrtag	cvsmenu.vim	/function! CVSrtag()/
+CVSrtagremove	cvsmenu.vim	/function! CVSrtagremove()/
+CVSshortstatus	cvsmenu.vim	/function! CVSshortstatus()/
+CVSstatus	cvsmenu.vim	/function! CVSstatus()/
+CVStag	cvsmenu.vim	/function! CVStag()/
+CVStagremove	cvsmenu.vim	/function! CVStagremove()/
+CVStimeToStr	cvsmenu.vim	/function! CVStimeToStr(entry)/
+CVSupdate	cvsmenu.vim	/function! CVSupdate()/
+CVSupdatemergediff	cvsmenu.vim	/function! CVSupdatemergediff()/
+CVSupdatemergerev	cvsmenu.vim	/function! CVSupdatemergerev()/
+CVSupdatetorev	cvsmenu.vim	/function! CVSupdatetorev()/
+CVSwatchadd	cvsmenu.vim	/function! CVSwatchadd()/
+CVSwatchedit	cvsmenu.vim	/function! CVSwatchedit()/
+CVSwatcheditors	cvsmenu.vim	/function! CVSwatcheditors()/
+CVSwatchoff	cvsmenu.vim	/function! CVSwatchoff()/
+CVSwatchon	cvsmenu.vim	/function! CVSwatchon()/
+CVSwatchremove	cvsmenu.vim	/function! CVSwatchremove()/
+CVSwatchunedit	cvsmenu.vim	/function! CVSwatchunedit()/
+CVSwatchwatchers	cvsmenu.vim	/function! CVSwatchwatchers()/
+Calendar	calendar.vim	/function! Calendar(...)/
+Call_corner	DrawIt.vim	/func! <SID>Call_corner(func_name)/
+ChangeArguments	DirDiff.vim	/function! <SID>ChangeArguments()/
+ChangeExcludes	DirDiff.vim	/function! <SID>ChangeExcludes()/
+ChangeIgnore	DirDiff.vim	/function! <SID>ChangeIgnore()/
+Choose	matchit.vim	/fun! s:Choose(patterns, string, comma, branch, prefix, suffix, ...)/
+CleanSearchHistory	templates.vim	/function! s:CleanSearchHistory()/
+CleanUpHistory	bufexplorer.vim	/function! <SID>CleanUpHistory()/
+CleanUpHistory	winfileexplorer.vim	/function! <SID>CleanUpHistory()/
+ClearDebug	debug.vim	/function! ClearDebug(...)/
+CloseDiffWindows	DirDiff.vim	/function! <SID>CloseDiffWindows()/
+CloseWindowsManager	winmanager.vim	/function! <SID>CloseWindowsManager()/
+Compute	templates.vim	/function! <SID>Compute(what)/
+ConfirmCloseSession	mySessions.vim	/function! <SID>ConfirmCloseSession()/
+Copy	DirDiff.vim	/function! <SID>Copy(fileFrom, fileTo)/
+Count	matchit.vim	/fun! s:Count(string, pattern, ...)/
+DeHighlightLine	DirDiff.vim	/function! <SID>DeHighlightLine()/
+Debug	debug.vim	/function! Debug(str, ...)/
+Delete	DirDiff.vim	/function! <SID>Delete(fileFrom)/
+DeleteBuffer	bufexplorer.vim	/function! <SID>DeleteBuffer()/
+DeleteFile	winfileexplorer.vim	/function! s:DeleteFile() range/
+DeleteSession	sessions.vim	/function! <SID>DeleteSession()/
+DirDiff	DirDiff.vim	/function! <SID>DirDiff(srcA, srcB)/
+DirDiffExec	DirDiff.vim	/function! <SID>DirDiffExec(cmd, interactive)/
+DirDiffNext	DirDiff.vim	/function! <SID>DirDiffNext()/
+DirDiffOpen	DirDiff.vim	/function! <SID>DirDiffOpen()/
+DirDiffPrev	DirDiff.vim	/function! <SID>DirDiffPrev()/
+DirDiffQuit	DirDiff.vim	/function! <SID>DirDiffQuit()/
+DirDiffSync	DirDiff.vim	/function! <SID>DirDiffSync() range/
+DirDiffSyncHelper	DirDiff.vim	/function! <SID>DirDiffSyncHelper(AB, line)/
+DirDiffUpdate	DirDiff.vim	/function! <SID>DirDiffUpdate()/
+DisplayBuffers	bufexplorer.vim	/function! <SID>DisplayBuffers()/
+DisplayError	wintagexplorer.vim	/function! <SID>DisplayError()/
+DisplayTagsFile	wintagexplorer.vim	/function! <SID>DisplayTagsFile()/
+DoAnyMoreBuffersExist	bufexplorer.vim	/function! <SID>DoAnyMoreBuffersExist()/
+DoubleClick	winfileexplorer.vim	/function s:DoubleClick()/
+Drag_end	DrawIt.vim	/func! <SID>Drag_end()/
+Drag_start	DrawIt.vim	/func! <SID>Drag_start()/
+DrawDown	DrawIt.vim	/function! <SID>DrawDown()/
+DrawErase	DrawIt.vim	/function! <SID>DrawErase()/
+DrawFour	DrawIt.vim	/func! <SID>DrawFour(x,y,xoff,yoff,a,b)/
+DrawLeft	DrawIt.vim	/function! <SID>DrawLeft()/
+DrawLine	DrawIt.vim	/func! <SID>DrawLine(x0, y0, x1, y1, horiz)/
+DrawPlainLine	DrawIt.vim	/func! <SID>DrawPlainLine(x0,y0,x1,y1)/
+DrawRight	DrawIt.vim	/function! <SID>DrawRight()/
+DrawSlantDownLeft	DrawIt.vim	/function! <SID>DrawSlantDownLeft()/
+DrawSlantDownRight	DrawIt.vim	/function! <SID>DrawSlantDownRight()/
+DrawSlantUpLeft	DrawIt.vim	/function! <SID>DrawSlantUpLeft()/
+DrawSlantUpRight	DrawIt.vim	/function! <SID>DrawSlantUpRight()/
+DrawSpace	DrawIt.vim	/function! <SID>DrawSpace(chr,dir)/
+DrawUp	DrawIt.vim	/function! <SID>DrawUp()/
+EditDir	winfileexplorer.vim	/function! s:EditDir(...)/
+EditDir	winmanager.vim	/function! <SID>EditDir(event)/
+EditEntry	winfileexplorer.vim	/function! s:EditEntry(movefirst,editcmd)/
+EditNextVisibleExplorer	winmanager.vim	/function! <SID>EditNextVisibleExplorer(grpn, memn, dir, editcmd)/
+EditSessionFile	sessions.vim	/function! EditSessionFile()/
+Ellipse	DrawIt.vim	/func! <SID>Ellipse(x0,y0,x1,y1)/
+EndGetSessionInfo	mySessions.vim	/function! <SID>EndGetSessionInfo()/
+EscapeDirForRegex	DirDiff.vim	/function! <SID>EscapeDirForRegex(path)/
+EscapeFilename	winfileexplorer.vim	/function! s:EscapeFilename(name)/
+ExchangeListItems	libList.vim	/function ExchangeListItems( array, item1Index, item2Index )/
+Exec	templates.vim	/function! <SID>Exec(what)/
+ExecMap	imaps.vim	/function! ExecMap(prefix, mode)/
+ExtractBufferNbr	bufexplorer.vim	/function! <SID>ExtractBufferNbr(line)/
+ExtractFileDate	winfileexplorer.vim	/function! s:ExtractFileDate(line)/
+ExtractFileName	bufexplorer.vim	/function! <SID>ExtractFileName(line)/
+ExtractFileName	winfileexplorer.vim	/function! s:ExtractFileName(line)/
+ExtractFileSize	winfileexplorer.vim	/function! s:ExtractFileSize(line)/
+ExtractFullFileName	winfileexplorer.vim	/function! s:ExtractFullFileName(line)/
+FB_DisplayFiles	filebrowser.vim	/function! FB_DisplayFiles(dir)/
+FB_DisplayHelp	filebrowser.vim	/function! <SID>FB_DisplayHelp()/
+FB_EditEntry	filebrowser.vim	/function! <SID>FB_EditEntry()/
+FB_GetVar	filebrowser.vim	/function! <SID>FB_GetVar(name, default)/
+FB_OpenFileBrowser	filebrowser.vim	/function! FB_OpenFileBrowser(dir)/
+FB_ResetSilentSettings	filebrowser.vim	/function! <SID>FB_ResetSilentSettings()/
+FB_SetHighlighting	filebrowser.vim	/function! <SID>FB_SetHighlighting()/
+FB_SetMaps	filebrowser.vim	/function! <SID>FB_SetMaps()/
+FB_SetScratchSettings	filebrowser.vim	/function! <SID>FB_SetScratchSettings()/
+FB_SetSilentSettings	filebrowser.vim	/function! <SID>FB_SetSilentSettings()/
+FB_SetVar	filebrowser.vim	/function! FB_SetVar(varname, value)/
+FB_Strntok	filebrowser.vim	/fun! <SID>FB_Strntok(s, tok, n)/
+FB_ToggleHelp	filebrowser.vim	/function! <SID>FB_ToggleHelp()/
+FileDateCmp	winfileexplorer.vim	/function! s:FileDateCmp(line1, line2, direction)/
+FileExplorer_IsValid	winfileexplorer.vim	/function! FileExplorer_IsValid()/
+FileExplorer_Start	winfileexplorer.vim	/function! FileExplorer_Start()/
+FileExplorer_WrapUp	winfileexplorer.vim	/function! FileExplorer_WrapUp()/
+FileModDate	winfileexplorer.vim	/function! s:FileModDate(name)/
+FileNameCmp	bufexplorer.vim	/function! <SID>FileNameCmp(line1, line2, direction)/
+FileNameCmp	winfileexplorer.vim	/function! s:FileNameCmp(line1, line2, direction)/
+FileSizeCmp	winfileexplorer.vim	/function! s:FileSizeCmp(line1, line2, direction)/
+FindExplorerInGroup	winmanager.vim	/function! <SID>FindExplorerInGroup(groupn, memn)/
+FoldLinesInfo	mkview.vim	/function! FoldLinesInfo(curLine)/
+FoldOpenClosedInfo	mkview.vim	/function! FoldOpenClosedInfo(folds)/
+FoldRegionsWithNoSkip	SyntaxFolds.vim	/function! FoldRegionsWithNoSkip(startpat, endpat, startoff, endoff, line1, line2, skippedRegions)/
+FoldRegionsWithSkip	SyntaxFolds.vim	/function! FoldRegionsWithSkip(startpat, endpat, startoff, endoff, startskip, endskip, line1, line2)/
+FoldTags	wintagexplorer.vim	/function! <SID>FoldTags()/
+GMTOffset	cvsmenu.vim	/function! GMTOffset()/
+GetBaseDir	DirDiff.vim	/function! <SID>GetBaseDir(diffName)/
+GetFileName	winfileexplorer.vim	/function! s:GetFileName()/
+GetFileNameEsc	winfileexplorer.vim	/function! s:GetFileNameEsc()/
+GetFileNameFromLine	DirDiff.vim	/function! <SID>GetFileNameFromLine(AB, line)/
+GetFullFileName	winfileexplorer.vim	/function! s:GetFullFileName()/
+GetFullFileNameEsc	winfileexplorer.vim	/function! s:GetFullFileNameEsc()/
+GetListCount	libList.vim	/function GetListCount( array )/
+GetListItem	libList.vim	/function GetListItem( array, index )/
+GetListMatchItem	libList.vim	/function GetListMatchItem( array, pattern )/
+GetSection	winfileexplorer.vim	/function! s:GetSection()/
+GetToken	calendar.vim	/function! s:GetToken(src,dlm,cnt)/
+GotoExplorerWindow	winmanager.vim	/function! <SID>GotoExplorerWindow(which)/
+GotoNextExplorerInGroup	winmanager.vim	/function! <SID>GotoNextExplorerInGroup(name, ...)/
+GotoWindow	winmanager.vim	/function! <SID>GotoWindow(reqdWinNum)/
+GroupTags	wintagexplorer.vim	/function! <SID>GroupTags() range/
+Hash	imaps.vim	/fun! s:Hash(text)/
+HighlightLine	DirDiff.vim	/function! <SID>HighlightLine()/
+Holer	DrawIt.vim	/func! <SID>Holer()/
+IMAP	imaps.vim	/function! IMAP(lhs, rhs, ft, ...)/
+IMAP_Debug	imaps.vim	/function! IMAP_Debug(string, pattern)/
+IMAP_DebugClear	imaps.vim	/function! IMAP_DebugClear(pattern)/
+IMAP_DebugPrint	imaps.vim	/function! IMAP_DebugPrint(pattern)/
+IMAP_GetPlaceHolderEnd	imaps.vim	/function! IMAP_GetPlaceHolderEnd()/
+IMAP_GetPlaceHolderStart	imaps.vim	/function! IMAP_GetPlaceHolderStart()/
+IMAP_Jumpfunc	imaps.vim	/function! IMAP_Jumpfunc(direction, inclusive)/
+IMAP_Mark	imaps.vim	/function! IMAP_Mark(action)/
+IMAP_PutTextWithMovement	imaps.vim	/function! IMAP_PutTextWithMovement(str, ...)/
+IMAP_list	imaps.vim	/function! IMAP_list(lhs)/
+Iconv	imaps.vim	/function! s:Iconv(text, mode)/
+IncrementColumn	increment.vim	/function! IncrementColumn(pad, ...)/
+InitStack	SyntaxFolds.vim	/function! InitStack(name)/
+InitializeMRUList	winmanager.vim	/function! <SID>InitializeMRUList()/
+InsertRefs	matchit.vim	/fun! s:InsertRefs(groupBR, prefix, group, suffix, matchline)/
+IsDiffer	DirDiff.vim	/function! <SID>IsDiffer(line)/
+IsExplorerBuffer	winmanager.vim	/function! <SID>IsExplorerBuffer(num)/
+IsExplorerGroupVisible	winmanager.vim	/function! <SID>IsExplorerGroupVisible(i, ...)/
+IsExplorerVisible	winmanager.vim	/function! <SID>IsExplorerVisible(i)/
+IsFoldClosed	mkview.vim	/function! IsFoldClosed(line)/
+IsInSkippedRegion	SyntaxFolds.vim	/function! IsInSkippedRegion(lnum, regions)/
+IsOnly	DirDiff.vim	/function! <SID>IsOnly(line)/
+IsOnlyVertical	winmanager.vim	/function! <SID>IsOnlyVertical()/
+IsWinManagerVisible	winmanager.vim	/function! IsWinManagerVisible()/
+LoadSession	sessions.vim	/function! LoadSession(sessionNickName)/
+LoadView	mkview.vim	/function! LoadView(foldInfo)/
+LoadView	wintagexplorer.vim	/function! s:LoadView(foldInfo)/
+LookupCharacter	imaps.vim	/function! s:LookupCharacter(char)/
+MRUCmp	bufexplorer.vim	/function! <SID>MRUCmp(line1, line2, direction)/
+MRUGet	bufexplorer.vim	/function! <SID>MRUGet(slot)/
+MRUGet	winmanager.vim	/function! <SID>MRUGet(slot)/
+MRUListShow	bufexplorer.vim	/function! <SID>MRUListShow()/
+MRUPop	bufexplorer.vim	/function! <SID>MRUPop()/
+MRUPop	winmanager.vim	/function! <SID>MRUPop()/
+MRUPush	bufexplorer.vim	/function! <SID>MRUPush()/
+MRUPush	winmanager.vim	/function! <SID>MRUPush()/
+MakeSessionsMenu	sessions.vim	/function! MakeSessionsMenu()/
+MakeSyntaxFolds	SyntaxFolds.vim	/function! MakeSyntaxFolds(force, ...)/
+MarkDirs	winfileexplorer.vim	/function! s:MarkDirs()/
+Match_debug	matchit.vim	/fun! s:Match_debug()/
+Match_wrapper	matchit.vim	/function! s:Match_wrapper(word, forward, mode) range/
+MkView	mkview.vim	/function! MkView()/
+MkViewNoFolds	mkview.vim	/function! MkViewNoFolds()/
+MkViewNoNestedFolds	mkview.vim	/function! MkViewNoNestedFolds()/
+MkViewNoNestedFolds	wintagexplorer.vim	/function! s:MkViewNoNestedFolds()/
+MoveDown	DrawIt.vim	/fu! <SID>MoveDown()/
+MoveLeft	DrawIt.vim	/fu! <SID>MoveLeft()/
+MoveRight	DrawIt.vim	/fu! <SID>MoveRight()/
+MoveUp	DrawIt.vim	/fu! <SID>MoveUp()/
+MultiMatch	matchit.vim	/fun! s:MultiMatch(spflag, mode)/
+MySearch	SyntaxFolds.vim	/function! <SID>MySearch(pat, opt)/
+OnlyExplorerWindowsOpen	winmanager.vim	/function! <SID>OnlyExplorerWindowsOpen()/
+OpenEntry	winfileexplorer.vim	/function! s:OpenEntry()/
+OpenEntryPrevWindow	winfileexplorer.vim	/function! s:OpenEntryPrevWindow()/
+OpenSession	mySessions.vim	/function! <SID>OpenSession()/
+OpenTag	wintagexplorer.vim	/function! <SID>OpenTag(split)/
+ParseOnlyFile	DirDiff.vim	/function! <SID>ParseOnlyFile(line)/
+ParseOnlySrc	DirDiff.vim	/function! <SID>ParseOnlySrc(line)/
+ParseSkip	matchit.vim	/fun! s:ParseSkip(str)/
+ParseWords	matchit.vim	/fun! s:ParseWords(groups)/
+Path	winfileexplorer.vim	/function! s:Path(p)/
+Path	winmanager.vim	/function! <SID>Path(p)/
+Pop	SyntaxFolds.vim	/function! Pop(name)/
+PrintDebug	debug.vim	/function! PrintDebug(...)/
+PrintError	winmanager.vim	/function! PrintError(eline)/
+PrintFavDirs	winfileexplorer.vim	/function! s:PrintFavDirs()/
+ProcessTemplate	templates.vim	/function! <SID>ProcessTemplate()/
+Push	SyntaxFolds.vim	/function! Push(name, elem)/
+QuickSortList	libList.vim	/function QuickSortList( array, beg, end )/
+ReadExFunc	readex.vim	/function! ReadExFunc(excom)/
+ReadTemplate	templates.vim	/function! <SID>ReadTemplate(...)/
+Ref	matchit.vim	/fun! s:Ref(string, d, ...)/
+RefreshWinManager	winmanager.vim	/function! <SID>RefreshWinManager(...)/
+RegisterExplorerGroup	winmanager.vim	/function! <SID>RegisterExplorerGroup()/
+RemoteOpen	remoteOpen.vim	/function! RemoteOpen(arglist)/
+RemoveLastHistoryItem	lastchange.vim	/function! <SID>RemoveLastHistoryItem()/
+RemoveListItem	libList.vim	/function RemoveListItem( array, index )/
+RemoveSeparators	winfileexplorer.vim	/function! s:RemoveSeparators()/
+RenameFile	winfileexplorer.vim	/function! s:RenameFile()/
+RepairAltRegister	winmanager.vim	/function! <SID>RepairAltRegister()/
+RepairMatlab	RepairMatlab.vim	/function! RepairMatlab()/
+ReplaceDownLeft	DrawIt.vim	/fu! <SID>ReplaceDownLeft()/
+ReplaceDownRight	DrawIt.vim	/fu! <SID>ReplaceDownRight()/
+ReplaceListItem	libList.vim	/function ReplaceListItem( array, index, item )/
+ReplaceQuote	fortune.vim	/function! <SID>ReplaceQuote()/
+ReplaceWithFortune	fortune.vim	/function! <SID>ReplaceWithFortune()/
+ResizeAllExplorers	winmanager.vim	/function! <SID>ResizeAllExplorers()/
+Resolve	matchit.vim	/fun! s:Resolve(source, target, output)/
+RestoreCursorPosition	bufexplorer.vim	/function! <SID>RestoreCursorPosition()/
+RestoreFileDisplay	winfileexplorer.vim	/function! s:RestoreFileDisplay()/
+SaveCursorPosition	bufexplorer.vim	/function! <SID>SaveCursorPosition()/
+SaveMap	DrawIt.vim	/fu! <SID>SaveMap(mapmode,maplead,mapchx)/
+SaveSession	mySessions.vim	/function! <SID>SaveSession()/
+SaveSession	sessions.vim	/function! SaveSession()/
+SelectBuffer	bufexplorer.vim	/function! <SID>SelectBuffer(...)/
+SetCharAt	DrawIt.vim	/func! <SID>SetCharAt(char, x, y)/
+SetComposeTime	fortune.vim	/function <SID>SetComposeTime()/
+SetDrawIt	DrawIt.vim	/function! SetDrawIt(di_vert,di_horiz,di_plus,di_upleft,di_upright,di_cross)/
+SetSuffixesLast	winfileexplorer.vim	/function! s:SetSuffixesLast()/
+SetTemplateMenu	templates.vim	/function! <SID>SetTemplateMenu()/
+SetupSyntax	DirDiff.vim	/function! <SID>SetupSyntax()/
+ShowAllFiles	winfileexplorer.vim	/function! s:ShowAllFiles()/
+ShowBuffers	bufexplorer.vim	/function! <SID>ShowBuffers()/
+ShowDirectory	winfileexplorer.vim	/function! s:ShowDirectory()/
+ShowVariableValue	winmanager.vim	/function! <SID>ShowVariableValue(...)/
+Snip	imaps.vim	/function! <SID>Snip() range/
+Sort	DirDiff.vim	/func! <SID>Sort(cmp) range/
+Sort	bufexplorer.vim	/function! <SID>Sort(cmp, direction) range/
+Sort	winfileexplorer.vim	/function! s:Sort(cmp,direction) range/
+SortListing	bufexplorer.vim	/function! <SID>SortListing()/
+SortListing	winfileexplorer.vim	/function! s:SortListing(msg)/
+SortR	DirDiff.vim	/func! <SID>SortR(start, end, cmp)/
+SortR	bufexplorer.vim	/function! <SID>SortR(start, end, cmp, direction)/
+SortR	winfileexplorer.vim	/function! s:SortR(start, end, cmp, direction)/
+SortReverse	bufexplorer.vim	/function! <SID>SortReverse()/
+SortReverse	winfileexplorer.vim	/function! s:SortReverse()/
+SortSelect	bufexplorer.vim	/function! <SID>SortSelect()/
+SortSelect	winfileexplorer.vim	/function! s:SortSelect()/
+Spacer	DrawIt.vim	/func! <SID>Spacer(debut, fin)/
+SplitOutPathName	bufexplorer.vim	/function! <SID>SplitOutPathName() range/
+StartBufExplorer	bufexplorer.vim	/function! <SID>StartBufExplorer(split)/
+StartDrawIt	DrawIt.vim	/function! <SID>StartDrawIt()/
+StartExplorer	winfileexplorer.vim	/function! s:StartExplorer(split, start_dir)/
+StartTagsFileDisplay	wintagexplorer.vim	/function! <SID>StartTagsFileDisplay()/
+StartWindowsManager	winmanager.vim	/function! <SID>StartWindowsManager()/
+StopDrawIt	DrawIt.vim	/function! <SID>StopDrawIt()/
+StrCmp	bufexplorer.vim	/function! <SID>StrCmp(line1, line2, direction)/
+StrCmp	winfileexplorer.vim	/function! s:StrCmp(line1, line2, direction)/
+StrRepeat	increment.vim	/function! StrRepeat(str, count)/
+Strcmp	DirDiff.vim	/func! <SID>Strcmp(str1, str2)/
+Strntok	SyntaxFolds.vim	/fun! <SID>Strntok(s, tok, n)/
+Strntok	imaps.vim	/fun! <SID>Strntok(s, tok, n)/
+Strntok	mkview.vim	/fun! <SID>Strntok(s, tok, n)/
+Strntok	remoteOpen.vim	/fun! <SID>Strntok(s, tok, n)/
+Strntok	sessions.vim	/function! <SID>Strntok(s, tok, n)/
+Strntok	strtok.vim	/fun! Strntok(s, tok, n)/
+Strntok	templates.vim	/function! s:Strntok(s, tok, n)/
+Strntok	winmanager.vim	/fun! <SID>Strntok(s, tok, n)/
+Strntok	wintagexplorer.vim	/fun! <SID>Strntok(s, tok, n)/
+Strntok2	strtok.vim	/fun! Strntok2(s, tok, n)/
+Strntok2	winmanager.vim	/fun! <SID>Strntok2(s, tok, n)/
+SynItemEcho	synEcho.vim	/function! SynItemEcho()/
+TE_ShowVariableValue	wintagexplorer.vim	/function! TE_ShowVariableValue(...)/
+TagsExplorer_IsPossible	wintagexplorer.vim	/function! TagsExplorer_IsPossible()/
+TagsExplorer_IsValid	wintagexplorer.vim	/function! TagsExplorer_IsValid()/
+TagsExplorer_Start	wintagexplorer.vim	/function! TagsExplorer_Start()/
+TagsExplorer_WrapUp	wintagexplorer.vim	/function! TagsExplorer_WrapUp()/
+ToggleHelp	bufexplorer.vim	/function! <SID>ToggleHelp()/
+ToggleHelp	winfileexplorer.vim	/function! s:ToggleHelp()/
+ToggleLongList	winfileexplorer.vim	/function! s:ToggleLongList()/
+ToggleOpenMode	bufexplorer.vim	/function! <SID>ToggleOpenMode()/
+ToggleSplitOutPathName	bufexplorer.vim	/function! <SID>ToggleSplitOutPathName()/
+ToggleSplitType	bufexplorer.vim	/function! <SID>ToggleSplitType()/
+ToggleTimer	fortune.vim	/function <SID>ToggleTimer()/
+ToggleWindowsManager	winmanager.vim	/function! <SID>ToggleWindowsManager()/
+UpdateHeader	bufexplorer.vim	/function! <SID>UpdateHeader()/
+UpdateHeader	winfileexplorer.vim	/function! s:UpdateHeader()/
+UpdateWithLastMod	lastchange.vim	/function! UpdateWithLastMod()/
+VEnclose	imaps.vim	/function! VEnclose(vstart, vend, VStart, VEnd)/
+WhichMemberVisible	winmanager.vim	/function! <SID>WhichMemberVisible(i)/
+Wholematch	matchit.vim	/fun! s:Wholematch(string, pat, start)/
+WinManagerFileEdit	winmanager.vim	/function! WinManagerFileEdit(bufName, split)/
+WinManagerForceReSize	winmanager.vim	/function! WinManagerForceReSize(explName)/
+WinManagerGetLastEditedFile	winmanager.vim	/function! WinManagerGetLastEditedFile(...)/
+WinManagerResumeAUs	winmanager.vim	/function! WinManagerResumeAUs()/
+WinManagerSuspendAUs	winmanager.vim	/function! WinManagerSuspendAUs()/

@@ -1,0 +1,290 @@
+*engspchk.txt*	English Spelling Checker   (v34)	Aug 05, 2003
+
+Author:  Charles E. Campbell, Jr.  <cec@NgrOyphSon.gPsfAc.nMasa.gov>
+	(elide NOSPAM from Dr. Campbell's email before using)
+
+==============================================================================
+1. Contents					*engspchk* *engspchk-contents*
+
+	1. Contents...................................: |engspchk-contents|
+	2. English Spelling Checker Manual............: |engspchk|
+	   Variables Controlling Usage................: |engspchk-var|
+	   Included Maps..............................: |engspchk-map|
+	   Click-N-Fix Maps...........................: |engspchk-clicknfix|
+	   Maps For Alternatives Window Only..........: |engspchk-alt|
+	   Usage......................................: |engspchk-usage|
+	   Checking Spelling In Comments..............: |engspchk-comment|
+	3. Other Languages............................: |engspchk-language|
+	   Creating A New Version of Engspchk.........: |engspchk-newversion|
+
+
+==============================================================================
+2. English Spelling Checker Manual			*engspchk-manual*
+
+VARIABLES CONTROLLING USAGE		*engspchk-var* *engspchk-variable*
+					*engspchk-variables*
+
+	g:cvimsyn : If this vim variable is set, then it is expected to old
+	    the path to the user word dictionary and database, nominally
+	    <engspchk.dict> and <engspchk.usr>.  If it doesn't exist, then
+	    engspchk will consider using a system environment variable called
+	    CVIMSYN (see below); and then search along the runtimepath.
+
+	    For example, under a Windows operating system, one might
+	    have in one's <.vimrc> file:
+
+		let g:cvimsyn= 'c:\vim\vimfiles\CVIMSYN'
+	    or
+		let g:cvimsyn= 'c:\vim\vimfiles\plugin\CVIMSYN'
+
+	    Under Unix/Linux, one might have
+
+		let g:cvimsyn= expand('${HOME}/.vim/CVIMSYN')
+	    or
+		let g:cvimsyn= expand('${HOME}/.vim/plugin/CVIMSYN')
+
+	CVIMSYN   : points to a directory holding the dictionary and the user
+	    word database <engspchk.usr>.  The optional file <engspchk.wb>,
+	    which contains words from Webster's 1913 Dictionary that aren't in
+	    <engspchk.dict> itself, if present in the CVIMSYN directory, will
+	    also be loaded.
+
+	    If the dictionary files cannot be found using g:cvimsyn or
+	    $CVIMSYN, then <engspchk> will search all the paths specified by
+	    the runtimepath (to see your runtimepath, :echo &rtp) for a
+	    subdirectory called CVIMSYN which holds the dictionaries.
+
+	g:DrChipTopLvlMenu: by default its "DrChip"; you may set this to
+	    whatever you like in your <.vimrc>.  This variable controls
+	    where engspchk's menu items are placed.
+
+	g:spchkautonext =0: no new behavior
+	                =1: \es and \et (and \ea, if a word is selected) will
+			    automatically advance the cursor to the next
+			    spelling error.  (needed for Click-N-Fix)
+
+	g:spchkdialect  = "usa"  United States
+	                = "uk"   United Kingdom
+			= "can"  Canadian
+		    : This variable allows the user to specify the dialect
+		      he or she prefers.  Colour vs. color, etc.  Alternate
+		      dialect spellings are flagged with Warning colors.
+
+	g:spchklang : specifies which language/dictionaries are to be used.
+	    By default it will be the prefix of the <---spchk.vim> file
+	    (engspchk.vim -> eng, gerspchk.vim -> ger, frspchk.vim -> fr,
+	    etc).  You may override that with a different prefix in your
+	    <.vimrc>.  When you load <engspchk.vim> (via \ec) the prefix will
+	    be used to load the dictionaries: <engspchk.dict>, <engspchk.usr>,
+	    <gerspchk.dict>, <gerspchk.usr>, etc.
+
+	    For example, one may put into one's <.vimrc> file:
+
+	    	let g:spchklang= "eng"
+
+	g:spchkmouse    =0 : default
+	                =1 : include mouse maps.  These mouse maps are optional
+		             because mouse maps are popular and obviously can
+		             interfere with other plugins' use of them.
+
+	g:spchkpunc     =0 : no new behavior
+                        =1 : check for some simple English punctuation problems
+                             non-capitalized word after ellipse (... a)
+                             non-capitalized word after sentence ending
+			     character ([.?!])
+	g:spchksilent   =0 : informative messages are allowed
+	                =1 : Sourcing... and Loading... messages are suppressed
+
+	BadWord            : a highlighting group rather than a variable,
+	                     words flagged as "BadWord" show up using the
+			     Error highlighting group.
+			     Default: black foreground on red background.
+                          
+	Dialect            : a highlighting group rather than a variable,
+	                     words flagged as "Dialect" show up using this group.
+			     Default: black foreground on yellow background.
+                          
+	RareWord           : a highlighting group rather than a variable,
+	                     words flagged as "RareWord" show up using this group.
+			     Default: black foreground on cyan background.
+
+INCLUDED MAPS					*engspchk-maps* *engspchk-map*
+
+	Although the maps as discussed here show a backslash, the actual
+	maps for 6.0 and above use <Leader> (ie. see :help mapleader for more)
+	which allows you to customize the map leader character sequence.  By
+	default, of course, the <Leader> is a backslash.
+
+	    \ea : look for alternative spellings of word under cursor
+	    \ec : engspchk's startup map (loads engspchk and dictionaries)
+	    \ee : end engspchk
+	    \en : move cursor to the next     spelling error
+	    \ep : move cursor to the previous spelling error
+
+	    \es : save   word under cursor into user dictionary (permanently)
+	    \et : add    word under cursor into user dictionary (temporarily)
+	    \eS : remove word under cursor from user dictionary (permanently)
+	    \eT : remove word under cursor from user dictionary (temporarily)
+
+	Click-N-Fix Maps				*engspchk-clicknfix*
+
+	    To enable Click-N-Fix, your mouse must be enabled (ex. :set
+	    mouse=n).  Unfortunately not all console terminals' mouse handling
+	    will let Vim see the mouse events.  See  :he mouse  for more on
+	    this topic.
+
+	    <leftmouse>  : there are actually two maps associated with the
+	          leftmouse: when no alternate-words window is present,
+		  the leftmouse moves the cursor to the next spelling
+		  error.  When there is an alternate words window, and
+		  the mouse is pointing in that window, then the word
+		  pointed to is selected and overwrites the misspelled
+		  word.
+
+	    <rightmouse> : when an alternate-words window is present, and
+	          the cursor is in that window, then like <leftmouse> that
+		  word is selected and overwrites the misspelled word.
+		  However, a global substitute is also done, changing
+		  all instances of the misspelled word to the selected
+		  alternate word (like \eA).
+
+	The \es map will store <engspchk.usr> in the directory where
+	<engspchk.dict> is.  To do so it must be able to find the directory;
+	ie. typically g:cvimsyn must be set to the correct path or the
+	environment variable CVIMSYN must be appropriately set.  For vim 6.0
+	or later, the CVIMSYN directory under the first directory in the
+	|runtimepath| may be used.
+
+	The \et map adds the word under the cursor into the spelling
+	database only for the current session.  It acts by adding
+	the word to the GoodWord keyword list but doesn't save the
+	word to the user's <engspchk.usr> database.  The \es map
+	both adds the word to the GoodWord keyword list and adds
+	a line to the <engspchk.usr> database for future use.
+
+	The \eS and \eT maps remove words from the user's dictionary;
+	the \eS map's action is permanent (actually removes the word
+	from the <engspchk.usr> file) whereas the \eT map affects only
+	the current session.
+
+	The \ee map ends the engspchk operation by turning syntax off
+	and then turning it back on, which should do automatic filetype
+	detection, etc.  Engspchk now saves any previous mappings that
+	would conflict with engspchk and restores them when engspchk is
+	ended.
+
+MAPS FOR ALTERNATIVES WINDOW ONLY			*engspchk-alt*
+
+	<cr> : when on alternatives line, will put word under cursor in
+	       misspelled word's stead
+	<tab>: like <cr>, but also does a global substitute to change
+	       all instances of the misspelled word to the selected
+	       alternate.
+	q    : will quit the alternate-word window
+	:q   : will quit the alternate-word window
+
+	In order to generate alternative spellings engspchk uses agrep.
+	Source code for agrep can be found at:
+
+	Windows binaries:
+	  http://www.tgries.de/agrep/#DOWNLOAD
+
+	Source:
+	  ftp://ftp.cs.arizona.edu/agrep/agrep-2.04.tar.Z
+	  http:///www2.cddc.vt.edu/linux/utils/text/agrep-2.04.tar.Z
+
+	To use this feature, assuming one has an agrep executable, put the
+	cursor on a misspelled word, then type "\ea".  A list of alternative
+	spellings will appear on one line on the bottom of the screen.  Use
+	regular vim motions to put the cursor on the word that you want and
+	hit the <return> key.  This action should put the new word in the
+	stead of the misspelled word.  A ":q" will abort the alternative-word
+	spellings window.
+
+	Engspchk will build a list of words from its dictionaries, including
+	the user's wordlist.  It will separate them with __END_..._DICTIONARY__
+	lines, thus making it simple for folks to remove unwanted portions
+	the of the wordlist.
+
+USAGE							*engspchk-usage*
+
+	Press "\ec" or select "Load Engspchk" from the menu (gvim).  This will
+	finish loading <engspchk.vim>, load <engspchk.dict>, and optionally
+	load <engspchk.wb> (if present) and <engspchk.usr> (if present).
+	Spelling errors will then show up in Error highlighting.  Of course
+	you'll need to have "syntax on" for this to work (put that statement
+	into your <.vimrc> if it isn't already there!).
+
+	If you come across a word that's mistakenly highlighted as a
+	spelling error, put the cursor on it and tap "\et" or "\es" while in
+	Normal mode.
+
+	The first command will inform Engspchk that the word is spelled
+	right, but only for the duration of this particular session.  If you
+	want the word to be permanently remembered, use the second command
+	"\es" (for engspchk save).
+
+	To go to the next or previous spelling error, use "\en" or "\ep"
+	commands respectively.  If upon inspection of a word that's spelled
+	incorrectly you're not sure of the correct spelling, you can use the
+	alternative spellings feature (see |engspchk-alt|).
+
+	Engspchk does _not_ do a "syntax clear", so that means that you can
+	usually just source it in on top of other highlighting.
+
+	Most syntax highlighting files, however, _do_ use "syntax clear" so
+	that means that resetting syntax (:set ft=..., changing buffers, etc)
+	will clear out engspchk.  One way to avoid this is to use
+
+		:%d
+		:0r (filename)
+
+	The user dictionary <engspchk.usr> is generated in the directory
+	specified by path specified by the g:cvimsyn variable (or CVIMSYN
+	environment variable).  Merely place the cursor on a word that's
+	currently not in your dictionary and press "\es".
+
+
+CHECKING SPELLING IN COMMENTS				*engspchk-comment*
+
+	In order to spell-check comments in various computer languages, the
+	language's vim syntax file needs to have its comment syntax group
+	contain a cluster.  Engspchk can then add itself to that cluster.
+	The vim syntax languages that currently support this include:
+
+	    amiga	c	dcl	latex	tex
+	    bash	cpp	fortran	sh	vim
+	    bib	csh	ksh
+
+	If there's a language for which you'd like to have comments
+	spelling-checked that isn't on the above list, please contact that
+	vim syntax file's maintainer and ask for the support mentioned above.
+
+
+==============================================================================
+3. Other Languages					*engspchk-language*
+
+	There are versions of this script for other languages.  If you come
+	up with a version for another language, please let me know where on
+	the web it is so that I can help make it known.  The following
+	versions were based on earlier editions of <engspchk.vim>:
+
+	 Dutch    : http://vim.sourceforge.net/tips/tip.php?tip_id=161
+	 German   : http://jeanluc-picard.de/vim/gerspchk/gerspchk.vim.gz
+	 Hungarian: http://vim.sourceforge.net/scripts/script.php?script_id=22
+	 Polish   : http://strony.wp.pl/wp/kostoo/polspchk.tar.gz
+	 Yiddish  : http://www.cs.uky.edu/~raphael/yiddish/vim.tar.gz
+
+
+CREATING A NEW VERSION OF ENGSPCHK			*engspchk-newversion*
+
+	The <engspchk.vim> file should be renamed to reflect the new language
+	being supported: ex. gerspchk.vim  for German.  The prefix (ie. "ger")
+	will be used in menus and for the user word database
+	(ie., gerspchk.usr).
+
+	Of course, the appropriate dictionary file (ie., gerspchk.dict) must
+	also be present in the CVIMSYN subdirectory.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help

@@ -1,0 +1,31 @@
+function! LoadSandboxVimrc(startDir)
+    let vimrcFiles = FindFileUp()
+    for fname in vimrcFiles
+        exec 'so '.fname
+    endfor
+endfunction
+
+" FindFileUp:  {{{
+" Description: 
+function! FindFileUp()
+    let found_files = []
+
+    let dir = getcwd()
+    while 1
+        if filereadable(dir.'/_local_vimrc')
+            let found_files += [dir.'/_local_vimrc']
+        endif
+        let nextdir = fnamemodify(dir, ':h')
+        if nextdir == dir
+            break
+        endif
+        let dir = nextdir
+    endwhile
+    
+    return found_files
+endfunction " }}}
+
+augroup LoadSandboxVimrc
+    au!
+    au VimEnter * :call LoadSandboxVimrc(getcwd())
+augroup END

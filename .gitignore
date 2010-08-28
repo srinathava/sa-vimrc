@@ -1,1 +1,4 @@
 .gdb*
+*.pyc
+*.sw*
+.nfs*
