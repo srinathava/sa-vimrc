@@ -177,15 +177,7 @@ let g:DrChipTopLvlMenu = 'Plugin.DrChip.'
 
 let g:DirDiffExcludes = "CVS,swp$,exe$,obj$,*.o$"
 
-let g:GdbShowAsyncOutputWindow = 0
-let g:GdbLogging = 1
-
-let g:proj_flags = 'F'
 let g:did_install_syntax_menu = 1
-let g:UseSAVimOmni = 0
 
-if has('win32')
-    source e:/sandbox/savadhan/vim/vimrc
-else
-    source /sandbox/savadhan/vim/vimrc
-endif
+let s:path = expand('<sfile>:p:h')
+exec 'set rtp+='.s:.path.'/vimfiles'
