@@ -171,7 +171,7 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 " -----------------------------------------------------------------------
 
-com -nargs=0 CD :exec 'cd '.expand('%:p:h')
+com! -nargs=0 CD :exec 'cd '.expand('%:p:h')
 let g:Debug = 1
 let g:DrChipTopLvlMenu = 'Plugin.DrChip.'
 
@@ -179,6 +179,6 @@ let g:DirDiffExcludes = "CVS,swp$,exe$,obj$,*.o$"
 
 let g:did_install_syntax_menu = 1
 
-let s:path = expand('<sfile>:p:h')
+let s:path = fnameescape(expand('<sfile>:p:h'))
 exec 'set rtp+='.s:.path.'/vimfiles'
 exec 'set rtp+='.s:.path.'/vimfiles/vim-latex'
