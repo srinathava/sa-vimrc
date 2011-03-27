@@ -180,5 +180,5 @@ let g:DirDiffExcludes = "CVS,swp$,exe$,obj$,*.o$"
 let g:did_install_syntax_menu = 1
 
 let s:path = fnameescape(expand('<sfile>:p:h'))
-exec 'set rtp+='.s:.path.'/vimfiles'
-exec 'set rtp+='.s:.path.'/vimfiles/vim-latex'
+exec 'set rtp+='.s:path.'/vimfiles'
+exec 'set rtp+='.s:path.'/vimfiles/vim-latex'

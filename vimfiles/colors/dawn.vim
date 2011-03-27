@@ -61,5 +61,6 @@ hi Identifier	gui=NONE guifg=SteelBlue4 guibg=NONE
 hi PreProc	gui=NONE guifg=Magenta4 guibg=NONE
 hi Type		gui=NONE guifg=Brown guibg=NONE
 hi Underlined	gui=underline guifg=SlateBlue guibg=bg
+hi MatchParen guifg=NONE ctermfg=NONE gui=underline guibg=NONE
 
 " vim: sw=2
