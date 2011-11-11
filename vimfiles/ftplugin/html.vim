@@ -12,7 +12,7 @@ endif
 
 " HTML commands {{{
 let b:tag_tab = "<table border=2 cellspacing=2 cellpadding=5>\<cr><tr>\<cr>\<tab><td><++></td>\<cr>\<bs></tr><++>\<cr></table><++>"
-let b:tag_ref = "<a href=\"<++>\"></a><++>"
+let b:tag_ref = "<a href=\"<++>\"><++></a><++>"
 let b:tag_ol =  "<ol>\<cr><li><++></li>\<cr></ol><++>"
 let b:tag_ul =  "<ul>\<cr><li><++></li>\<cr></ul><++>"
 let b:tag_tr =  "<tr>\<cr><td><++></td><++>\<cr></tr><++>"

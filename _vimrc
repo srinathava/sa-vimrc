@@ -27,8 +27,10 @@ set ai
 set tw=75
 set ts=4
 set bs=2
-set shell=bash
-set shellslash
+if has('unix')
+    set shell=bash
+    set shellslash
+endif
 set wildmode=longest:list
 set wildmenu
 set autoread
@@ -182,3 +184,6 @@ let g:did_install_syntax_menu = 1
 let s:path = fnameescape(expand('<sfile>:p:h'))
 exec 'set rtp+='.s:path.'/vimfiles'
 exec 'set rtp+='.s:path.'/vimfiles/vim-latex'
+exec 'set rtp+='.s:path.'/pathogen'
+
+call pathogen#infect()
