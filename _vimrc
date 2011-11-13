@@ -186,4 +186,5 @@ exec 'set rtp+='.s:path.'/vimfiles'
 exec 'set rtp+='.s:path.'/vimfiles/vim-latex'
 exec 'set rtp+='.s:path.'/pathogen'
 
+let g:Imap_UsePlaceHolders = 0
 call pathogen#infect()
