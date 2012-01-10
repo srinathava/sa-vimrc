@@ -185,6 +185,7 @@ let s:path = fnameescape(expand('<sfile>:p:h'))
 exec 'set rtp+='.s:path.'/vimfiles'
 exec 'set rtp+='.s:path.'/vimfiles/vim-latex'
 exec 'set rtp+='.s:path.'/pathogen'
+exec 'set rtp+='.s:path.'/vimfiles/after'
 
 let g:Imap_UsePlaceHolders = 0
 call pathogen#infect()

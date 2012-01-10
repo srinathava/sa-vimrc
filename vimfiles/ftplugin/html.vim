@@ -10,6 +10,8 @@ if glob(s:path.'/xml.vim') != ''
 	exec 'so '.s:path.'/xml.vim'
 endif
 
+setlocal sw=2 sts=2
+
 " HTML commands {{{
 let b:tag_tab = "<table border=2 cellspacing=2 cellpadding=5>\<cr><tr>\<cr>\<tab><td><++></td>\<cr>\<bs></tr><++>\<cr></table><++>"
 let b:tag_ref = "<a href=\"<++>\"><++></a><++>"
@@ -20,7 +22,7 @@ let b:tag_td =  "<td><++></td><++>"
 let b:tag_th =  "<th><++></th><++>"
 let b:tag_bb =  "<b><++></b><++>"
 let b:tag_it =  "<i><++></i><++>"
-let b:tag_input = '<input id="<++>"><++>'
+let b:tag_input = '<input type="<++>" name="<++>"><++>'
 let b:tag_svg = '<object type="image/svg+xml" data="<++>" height="<++>" width=<++>></object>'
 let b:tag_js = '<script type="text/javascript" src="<++>"></script>'
 let b:tag_jquery = '<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>'."\<CR>"
