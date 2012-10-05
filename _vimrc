@@ -189,3 +189,9 @@ exec 'set rtp+='.s:path.'/vimfiles/after'
 
 let g:Imap_UsePlaceHolders = 0
 call pathogen#infect()
+
+if has('unix')
+    let $PATH = $PATH . ":" . s:path
+else
+    let $PATH = $PATH . ";" . s:path
+endif
