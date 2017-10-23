@@ -7,14 +7,14 @@
 "		g:html_indent_strict_table -- inhibit 'O -' elements
 
 " Only load this indent file when no other was loaded.
-if exists("b:did_indent")
+if exists("b:did_my_indent2")
     finish
 endif
-let b:did_indent = 1
+let b:did_my_indent2 = 1
 
 
 " [-- local settings (must come before aborting the script) --]
-setlocal indentexpr=HtmlIndentGet(v:lnum)
+setlocal indentexpr=MyHtmlIndentGet(v:lnum)
 setlocal indentkeys=o,O,*<Return>,<>>,<bs>,{,}
 
 
@@ -167,7 +167,7 @@ fun! <SID>HtmlIndentSum(lnum, style)
     return 0
 endfun
 
-fun! HtmlIndentGet(lnum)
+fun! MyHtmlIndentGet(lnum)
     " Find a non-empty line above the current line.
     let lnum = prevnonblank(a:lnum - 1)
 

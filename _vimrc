@@ -1,5 +1,5 @@
 " -------------------------------- Settings ---------------------------
-au GuiEnter * colorscheme dawn
+au GuiEnter * colorscheme navajo-night
 nmap <M-f> :simalt~x<CR>:<BS>
 filetype plugin on
 filetype indent on
@@ -75,7 +75,7 @@ if has('gui_win32')
     set guifont=Consolas:h10
 else
     " set guifont=Inconsolata\ 12
-    set guifont=Monospace\ 9
+    set guifont=Monospace\ 10
 end
 set et sts=4 sw=4
 
@@ -175,17 +175,17 @@ map <c-l> <c-w>l
 
 com! -nargs=0 CD :exec 'cd '.expand('%:p:h')
 let g:Debug = 1
-let g:DrChipTopLvlMenu = 'Plugin.DrChip.'
+let g:DrChipTopLvlMenu = '&Plugin.&DrChip.'
 
 let g:DirDiffExcludes = "CVS,swp$,exe$,obj$,*.o$"
 
 let g:did_install_syntax_menu = 1
 
 let s:path = fnameescape(expand('<sfile>:p:h'))
-exec 'set rtp+='.s:path.'/vimfiles'
-exec 'set rtp+='.s:path.'/vimfiles/vim-latex'
-exec 'set rtp+='.s:path.'/pathogen'
-exec 'set rtp+='.s:path.'/vimfiles/after'
+exec 'set rtp^='.s:path.'/vimfiles'
+exec 'set rtp^='.s:path.'/vimfiles/vim-latex'
+exec 'set rtp^='.s:path.'/pathogen'
+exec 'set rtp^='.s:path.'/vimfiles/after'
 
 let g:Imap_UsePlaceHolders = 0
 call pathogen#infect()
@@ -195,3 +195,16 @@ if has('unix')
 else
     let $PATH = $PATH . ";" . s:path
 endif
+
+au BufReadCmd *.slx call zip#Browse(expand("<amatch>"))
+
+" syntastic options
+:set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
