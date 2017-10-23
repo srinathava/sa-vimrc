@@ -26,6 +26,7 @@ let b:tag_input = '<input type="<++>" name="<++>"><++>'
 let b:tag_svg = '<object type="image/svg+xml" data="<++>" height="<++>" width=<++>></object>'
 let b:tag_css = '<link rel="stylesheet" type="text/css" href="<++>" />'
 let b:tag_js = '<script type="text/javascript" src="<++>"></script>'
+let b:tag_css = '<link rel="stylesheet" type="text/css" href="<++>.css">'
 let b:tag_jquery = '<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>'."\<CR>"
     \ .'<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>'."\<CR>"
     \ .'<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>'
