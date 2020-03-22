@@ -3,6 +3,7 @@ set termguicolors
 au VimEnter * colorscheme navajo-night
 
 nmap <M-f> :simalt~x<CR>:<BS>
+nmap <F3> <Plug>StartBufExplorer
 filetype plugin on
 filetype indent on
 " ff=unix makes sense because vim compiled for a dos machine can source unix
