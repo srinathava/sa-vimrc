@@ -16,3 +16,15 @@
 [submodule "vimfiles/bundle/syntastic"]
 	path = vimfiles/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vimfiles/bundle/vim-fish"]
+	path = vimfiles/bundle/vim-fish
+	url = git://github.com/dag/vim-fish.git
+[submodule "vimfiles/bundle/vim-virtualenv"]
+	path = vimfiles/bundle/vim-virtualenv
+	url = https://github.com/plytophogy/vim-virtualenv.git
+[submodule "vimfiles/bundle/vim-rtags"]
+	path = vimfiles/bundle/vim-rtags
+	url = https://github.com/lyuts/vim-rtags.git
+[submodule "vimfiles/bundle/YouCompleteMe"]
+	path = vimfiles/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git

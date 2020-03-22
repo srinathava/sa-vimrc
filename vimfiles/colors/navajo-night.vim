@@ -93,5 +93,6 @@ hi User4        gui=bold guifg=Cyan       guibg=#0c0c0c
 
 " Colour misspelt words
 hi BadWord ctermfg=White ctermbg=darkred cterm=bold guifg=Yellow guibg=#522719 gui=bold
+hi PMenu guifg=black guibg=lightgray
 
 " vim:set list et:

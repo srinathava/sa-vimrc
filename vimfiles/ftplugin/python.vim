@@ -8,5 +8,6 @@ function! PY_MakeFunctionTemplate()
 endfunction " }}}
 
 inoremap <buffer> <C-_> <C-r>=PY_MakeFunctionTemplate()<CR>
+let b:syntastic_checkers = ["python", "flake8"]
 
 set et sts=4 sw=4

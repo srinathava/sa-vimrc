@@ -1,5 +1,7 @@
 " -------------------------------- Settings ---------------------------
-au GuiEnter * colorscheme navajo-night
+set termguicolors
+au VimEnter * colorscheme navajo-night
+
 nmap <M-f> :simalt~x<CR>:<BS>
 filetype plugin on
 filetype indent on
@@ -36,14 +38,19 @@ set wildmenu
 set autoread
 set mousemodel=popup_setpos
 set sessionoptions=buffers,curdir,folds,globals,resize,winpos,winsize
+set modeline
 let mapleader='`'
 " incase i have to view some file with huge long lines...
 set linebreak
 " preserve some info from the last vim session
 if has('unix')
-    set viminfo='1000,:1000,\"5000,/1000,n~/.viminfo.win32
+    if has('nvim')
+        set viminfo='1000,:1000,\"5000,/1000,n~/.viminfo.unix.nvim
+    else
+        set viminfo='1000,:1000,\"5000,/1000,n~/.viminfo.unix.vim
+    endif
 else
-    set viminfo='1000,:1000,\"5000,/1000,n~/.viminfo.unix
+    set viminfo='1000,:1000,\"5000,/1000,n~/.viminfo.win32
 end
 " always want to see the whole line.
 set wrap
@@ -175,7 +182,6 @@ map <c-l> <c-w>l
 
 com! -nargs=0 CD :exec 'cd '.expand('%:p:h')
 let g:Debug = 1
-let g:DrChipTopLvlMenu = '&Plugin.&DrChip.'
 
 let g:DirDiffExcludes = "CVS,swp$,exe$,obj$,*.o$"
 
@@ -186,6 +192,8 @@ exec 'set rtp^='.s:path.'/vimfiles'
 exec 'set rtp^='.s:path.'/vimfiles/vim-latex'
 exec 'set rtp^='.s:path.'/pathogen'
 exec 'set rtp^='.s:path.'/vimfiles/after'
+
+exec 'set packpath+='.s:path.'/vimfiles'
 
 let g:Imap_UsePlaceHolders = 0
 call pathogen#infect()
@@ -201,10 +209,13 @@ au BufReadCmd *.slx call zip#Browse(expand("<amatch>"))
 " syntastic options
 :set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_balloons = 0
+
+let g:zip_use_vertical_split = 1

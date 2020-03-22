@@ -2,3 +2,6 @@
 *.pyc
 *.sw*
 .nfs*
+vimfiles/pack
+vimfiles/doc
+.gitmodules
