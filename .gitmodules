@@ -25,6 +25,3 @@
 [submodule "vimfiles/bundle/vim-rtags"]
 	path = vimfiles/bundle/vim-rtags
 	url = https://github.com/lyuts/vim-rtags.git
-[submodule "vimfiles/bundle/YouCompleteMe"]
-	path = vimfiles/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
