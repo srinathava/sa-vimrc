@@ -22,6 +22,3 @@
 [submodule "vimfiles/bundle/vim-virtualenv"]
 	path = vimfiles/bundle/vim-virtualenv
 	url = https://github.com/plytophogy/vim-virtualenv.git
-[submodule "vimfiles/bundle/vim-rtags"]
-	path = vimfiles/bundle/vim-rtags
-	url = https://github.com/lyuts/vim-rtags.git
