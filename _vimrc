@@ -1,6 +1,12 @@
 " -------------------------------- Settings ---------------------------
 set termguicolors
-au VimEnter * colorscheme navajo-night
+if v:version >= 802
+    " We need ++nested because otherwise terminals opened from Vim do not
+    " seem to get a colorscheme.
+    au VimEnter * ++nested colorscheme navajo-night
+else
+    au VimEnter * colorscheme navajo-night
+endif
 
 nmap <M-f> :simalt~x<CR>:<BS>
 nmap <F3> <Plug>StartBufExplorer
@@ -83,7 +89,7 @@ if has('gui_win32')
     set guifont=Consolas:h10
 else
     " set guifont=Inconsolata\ 12
-    set guifont=Monospace\ 10
+    set guifont=SF\ Mono\ 11,Monospace\ 11
 end
 set et sts=4 sw=4
 
@@ -189,7 +195,7 @@ let g:DirDiffExcludes = "CVS,swp$,exe$,obj$,*.o$"
 let g:did_install_syntax_menu = 1
 
 let s:path = fnameescape(expand('<sfile>:p:h'))
-exec 'set rtp^='.s:path.'/vimfiles'
+exec 'set rtp+='.s:path.'/vimfiles'
 exec 'set rtp^='.s:path.'/vimfiles/vim-latex'
 exec 'set rtp^='.s:path.'/pathogen'
 exec 'set rtp^='.s:path.'/vimfiles/after'
@@ -220,3 +226,17 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_balloons = 0
 
 let g:zip_use_vertical_split = 1
+
+" s:Mkdir:  {{{
+" Description: 
+function! s:SetDir(setting)
+    let dirname = "/tmp/".$USER."/vim_tmp/".a:setting
+    if !isdirectory(dirname)
+        echomsg("Creating directory ".dirname)
+        call system("mkdir -p ".dirname)
+    endif
+    exec "set ".a:setting."=".dirname."//"
+endfunction " }}}
+call s:SetDir('backupdir')
+call s:SetDir('directory')
+call s:SetDir('undodir')
